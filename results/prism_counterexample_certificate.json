@@ -1,0 +1,225 @@
+{
+  "claim": "The interlacing component of Ferroni--McGinnis Conjecture 5.12 is false.",
+  "parameters": {
+    "k": 6,
+    "c": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2
+    ],
+    "c_split": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  "dimension_p": 10,
+  "dimension_q": 11,
+  "ehrhart_p_at_0_through_dimension": [
+    1,
+    672,
+    39183,
+    706364,
+    6653195,
+    41539796,
+    195289689,
+    746005952,
+    2432104685,
+    6997745668,
+    18199110919
+  ],
+  "ehrhart_q_at_0_through_dimension": [
+    1,
+    924,
+    73789,
+    1703636,
+    19611175,
+    144840476,
+    786588243,
+    3409213016,
+    12434998005,
+    39581170420,
+    112835748609,
+    293661065788
+  ],
+  "p_coefficients_ascending": [
+    1,
+    661,
+    31846,
+    312146,
+    927706,
+    960774,
+    347986,
+    38686,
+    901,
+    1
+  ],
+  "q_coefficients_ascending": [
+    1,
+    912,
+    62767,
+    878932,
+    3834832,
+    6169360,
+    3834832,
+    878932,
+    62767,
+    912,
+    1
+  ],
+  "p_at_minus850": 1625988474636775883423151,
+  "q_at_minus850_minus_y_coefficients_ascending": [
+    2462840223865789630433882301,
+    238230301785310449829592988,
+    2391558152901238905506167,
+    11120172153189576549868,
+    30489016491580854832,
+    53974260402703840,
+    63838975099432,
+    50399816668,
+    25598467,
+    7588,
+    1
+  ],
+  "p_simple_negative_root_intervals": [
+    {
+      "left": "-857",
+      "right": "-856",
+      "sign_left": -1,
+      "sign_right": 1
+    },
+    {
+      "left": "-34",
+      "right": "-33",
+      "sign_left": 1,
+      "sign_right": -1
+    },
+    {
+      "left": "-8",
+      "right": "-7",
+      "sign_left": -1,
+      "sign_right": 1
+    },
+    {
+      "left": "-5/2",
+      "right": "-12/5",
+      "sign_left": 1,
+      "sign_right": -1
+    },
+    {
+      "left": "-1",
+      "right": "-9/10",
+      "sign_left": -1,
+      "sign_right": 1
+    },
+    {
+      "left": "-2/5",
+      "right": "-3/8",
+      "sign_left": 1,
+      "sign_right": -1
+    },
+    {
+      "left": "-13/100",
+      "right": "-3/25",
+      "sign_left": -1,
+      "sign_right": 1
+    },
+    {
+      "left": "-13/500",
+      "right": "-1/40",
+      "sign_left": 1,
+      "sign_right": -1
+    },
+    {
+      "left": "-17/10000",
+      "right": "-1/625",
+      "sign_left": -1,
+      "sign_right": 1
+    }
+  ],
+  "q_simple_negative_root_intervals": [
+    {
+      "left": "-839",
+      "right": "-838",
+      "sign_left": 1,
+      "sign_right": -1
+    },
+    {
+      "left": "-57",
+      "right": "-56",
+      "sign_left": -1,
+      "sign_right": 1
+    },
+    {
+      "left": "-11",
+      "right": "-10",
+      "sign_left": 1,
+      "sign_right": -1
+    },
+    {
+      "left": "-37/10",
+      "right": "-18/5",
+      "sign_left": -1,
+      "sign_right": 1
+    },
+    {
+      "left": "-8/5",
+      "right": "-3/2",
+      "sign_left": 1,
+      "sign_right": -1
+    },
+    {
+      "left": "-67/100",
+      "right": "-33/50",
+      "sign_left": -1,
+      "sign_right": 1
+    },
+    {
+      "left": "-7/25",
+      "right": "-27/100",
+      "sign_left": 1,
+      "sign_right": -1
+    },
+    {
+      "left": "-93/1000",
+      "right": "-23/250",
+      "sign_left": -1,
+      "sign_right": 1
+    },
+    {
+      "left": "-9/500",
+      "right": "-17/1000",
+      "sign_left": 1,
+      "sign_right": -1
+    },
+    {
+      "left": "-3/2500",
+      "right": "-11/10000",
+      "sign_left": -1,
+      "sign_right": 1
+    }
+  ],
+  "verified": true,
+  "limits": [
+    "Does not refute real-rootedness of prism-slice h*-polynomials.",
+    "Does not settle hypersimplex real-rootedness or unimodality.",
+    "Does not certify novelty or priority."
+  ]
+}

@@ -1,0 +1,202 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=24mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,longtable,array}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,urlcolor=MidnightBlue,citecolor=MidnightBlue]{hyperref}
+\usepackage{enumitem,fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{Prism-slice interlacing: an exact counterexample}
+\rhead{Research draft}
+\cfoot{\thepage}
+\setlength{\headheight}{14pt}
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{0pt}
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newcommand{\ZZ}{\mathbb Z}
+\newcommand{\RR}{\mathbb R}
+\newcommand{\Rpoly}{\mathcal R}
+\title{A counterexample to coordinate-splitting interlacing\newline for prism-slice $h^*$-polynomials}
+\author{Internal research note}
+\date{2 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+We give an exact counterexample to the interlacing assertion in Ferroni--McGinnis, Conjecture 5.12, first posed in 2022. The witness is the split of the last coordinate of $\mathbf c=(1^{10},2)$ into $(1,1)$ at slice level $k=6$. Both resulting Ehrhart $h^*$-polynomials have simple negative real roots, but they do not interlace. The obstruction is certified by integer polynomial evaluation and an elementary bound on a half-line. Coefficients are recovered by two independent lattice-counting formulas. This note does not refute the separate real-rootedness assertion or settle real-rootedness or unimodality of hypersimplices. The mathematical certificate has undergone internal exact checks; novelty, priority, and external peer review are not certified.
+\end{abstract}
+
+\section{Original target and scope}
+For $\mathbf c=(c_1,\ldots,c_N)\in\ZZ_{>0}^N$ and $k\in\ZZ_{>0}$, set
+\[
+\Rpoly_{k,\mathbf c}=\left\{u\in\RR^N:0\le u_i\le c_i,\quad\sum_{i=1}^N u_i=k\right\}.
+\]
+When $0<k<\sum_i c_i$, its dimension is $N-1$. Write
+\[
+L_{k,\mathbf c}(m)=\#(m\Rpoly_{k,\mathbf c}\cap\ZZ^N),\qquad
+\sum_{m\ge0}L_{k,\mathbf c}(m)x^m=\frac{H_{k,\mathbf c}(x)}{(1-x)^N}.
+\]
+Thus $H_{k,\mathbf c}$ is the Ehrhart $h^*$-polynomial, not the Ehrhart counting polynomial $L_{k,\mathbf c}$.
+
+Ferroni and McGinnis formulate Conjecture 5.12 in \cite{FM1,FM2,FMJ}. The journal version asserts that all these $H_{k,\mathbf c}$ are real-rooted and, whenever $c_N\ge2$, the polynomials for $\mathbf c$ and
+\[
+\mathbf c'=(c_1,\ldots,c_{N-1},c_N-1,1)
+\]
+have interlacing roots. The original v1 combines real-rootedness and interlacing in one assertion. The witnesses below lie in the nonempty, positive-dimensional interior range; no degenerate empty-polytope convention is used.
+
+\begin{theorem}\label{thm:main}
+Let $k=6$, $\mathbf c=(1,1,1,1,1,1,1,1,1,1,2)$, and $\mathbf c'=(1,1,1,1,1,1,1,1,1,1,1,1)$. Then
+\[
+P(x)=H_{6,\mathbf c}(x),\qquad Q(x)=H_{6,\mathbf c'}(x)
+\]
+have degrees $9$ and $10$ and each has only simple negative real roots. They do not interlace. Consequently the coordinate-splitting interlacing assertion of Conjecture 5.12 is false.
+\end{theorem}
+
+The second polytope is the hypersimplex $\Delta_{6,12}$. The failed split is precisely a step of the splitting chain proposed immediately after the conjecture. A counterexample to a universal assertion requires one admissible instance; no truncation of the conjecture's quantifiers is involved.
+
+\section{Exact recovery of the two polynomials}
+The dimension and integrality claims can be checked directly. The point $u_i=kc_i/\sum c_i$ is strictly inside every coordinate interval, so the hyperplane section has dimension $N-1$. At a vertex of the section at most one coordinate can be strictly between its endpoints: otherwise one can perturb two such coordinates in opposite directions. Every coordinate at an endpoint is integral, and the sum equation makes the possible remaining coordinate integral as well.
+
+The defining lattice counts are
+\begin{align}
+L_P(m)&=[z^{6m}](1+z+\cdots+z^m)^{10}(1+z+\cdots+z^{2m}),\label{eq:DP}\\
+L_Q(m)&=[z^{6m}](1+z+\cdots+z^m)^{12}.\nonumber
+\end{align}
+Independently, inclusion--exclusion on coordinates exceeding their bounds gives
+\begin{align}
+L_P(m)={}&\sum_{a=0}^{5}(-1)^a\binom{10}{a}
+ \binom{(6-a)m+10-a}{10}\label{eq:IEP}\\
+&-\sum_{a=0}^{3}(-1)^a\binom{10}{a}
+ \binom{(4-a)m+9-a}{10},\nonumber\\
+L_Q(m)={}&\sum_{a=0}^{5}(-1)^a\binom{12}{a}
+ \binom{(6-a)m+11-a}{11}.\label{eq:IEQ}
+\end{align}
+Here $m\ge0$, and a binomial coefficient with a nonnegative upper integer smaller than the lower integer is zero. These finite formulas also show directly that $L_P$ and $L_Q$ are polynomials in $m$ of degrees at most $10$ and $11$. Multiplication of their series by $(1-x)^{11}$ and $(1-x)^{12}$ yields polynomials of degrees at most $10$ and $11$.
+
+More explicitly, for a section with $N$ coordinates the numerator coefficients are
+\begin{equation}\label{eq:htransform}
+h_j=\sum_{i=0}^{j}(-1)^i\binom Ni L(j-i),\qquad 0\le j\le N-1.
+\end{equation}
+The following values therefore determine the entire polynomials. A dash denotes a value not needed for that polynomial.
+
+\begin{center}
+\begin{tabular}{r|r r|r r}
+\toprule
+$j$ & $L_P(j)$ & $L_Q(j)$ & $[x^j]P$ & $[x^j]Q$\\
+\midrule
+0&1&1&1&1\\
+1&672&924&661&912\\
+2&39183&73789&31846&62767\\
+3&706364&1703636&312146&878932\\
+4&6653195&19611175&927706&3834832\\
+5&41539796&144840476&960774&6169360\\
+6&195289689&786588243&347986&3834832\\
+7&746005952&3409213016&38686&878932\\
+8&2432104685&12434998005&901&62767\\
+9&6997745668&39581170420&1&912\\
+10&18199110919&112835748609&0&1\\
+11&--&293661065788&--&0\\
+\bottomrule
+\end{tabular}
+\end{center}
+In ascending order, this is
+\begin{align*}
+P(x)={}&1+661x+31846x^2+312146x^3+927706x^4\\
+&+960774x^5+347986x^6+38686x^7+901x^8+x^9,\\
+Q(x)={}&1+912x+62767x^2+878932x^3+3834832x^4\\
+&+6169360x^5+3834832x^6+878932x^7\\
+&+62767x^8+912x^9+x^{10}.
+\end{align*}
+The count at $m=1$ also gives the useful independent sanity checks $[x]P=672-11$ and $[x]Q=924-12$.
+
+\section{An elementary half-line certificate}
+\begin{lemma}\label{lem:separation}
+$P$ has a real zero in $(-\infty,-850)$, whereas $Q$ has no real zero in $(-\infty,-850]$.
+\end{lemma}
+\begin{proof}
+Integer evaluation gives
+\[
+P(-850)=1625988474636775883423151>0.
+\]
+Since $P$ is monic of odd degree, $P(x)\to-\infty$ as $x\to-\infty$. The intermediate value theorem gives its claimed zero.
+
+For $y\ge850$, expand $Q(-y)/y^8$. Discarding its positive lower-degree terms gives
+\begin{align*}
+\frac{Q(-y)}{y^8}\ge{}&y^2-912y+62767
+ -\frac{878932}{y}-\frac{6169360}{y^3}\\
+&-\frac{878932}{y^5}-\frac{912}{y^7}.
+\end{align*}
+The quadratic is increasing on $[850,\infty)$, because its derivative is $2y-912>0$, and its value at $850$ is $10067$. Also $y^{-r}\le850^{-1}$ for $r=1,3,5,7$. Consequently
+\[
+\frac{Q(-y)}{y^8}\ge10067-\frac{878932+6169360+878932+912}{850}
+=\frac{628814}{850}>0.
+\]
+This proves the second assertion.
+\end{proof}
+
+If real-rooted polynomials of degrees $9$ and $10$ interlace, ordering their zeros increasingly as $\alpha_1,\ldots,\alpha_9$ and $\beta_1,\ldots,\beta_{10}$ requires
+\[
+\beta_1\le\alpha_1\le\beta_2\le\cdots\le\alpha_9\le\beta_{10}.
+\]
+Lemma~\ref{lem:separation} makes $\beta_1\le\alpha_1$ impossible. This already disproves the conjectured conjunction without any reliance on floating-point roots. The next section additionally verifies that it is the interlacing assertion alone that fails in this example.
+
+\section{Simple negative roots: a rational sign certificate}
+For each row below, exact rational Horner evaluation gives the displayed signs at the two endpoints. Each interval is strictly negative. The intervals for each polynomial are pairwise disjoint, and their number equals its degree. The intermediate value theorem therefore supplies exactly that many distinct real roots. All roots are consequently simple and negative.
+
+\begin{center}
+\begin{tabular}{c c c|c c c}
+\toprule
+\multicolumn{3}{c|}{$P$, degree $9$}&\multicolumn{3}{c}{$Q$, degree $10$}\\
+left&right&signs&left&right&signs\\
+\midrule
+$-857$&$-856$&$-,+$&$-839$&$-838$&$+,-$\\
+$-34$&$-33$&$+,-$&$-57$&$-56$&$-,+$\\
+$-8$&$-7$&$-,+$&$-11$&$-10$&$+,-$\\
+$-5/2$&$-12/5$&$+,-$&$-37/10$&$-36/10$&$-,+$\\
+$-1$&$-9/10$&$-,+$&$-16/10$&$-15/10$&$+,-$\\
+$-2/5$&$-3/8$&$+,-$&$-67/100$&$-66/100$&$-,+$\\
+$-13/100$&$-12/100$&$-,+$&$-28/100$&$-27/100$&$+,-$\\
+$-26/1000$&$-25/1000$&$+,-$&$-93/1000$&$-92/1000$&$-,+$\\
+$-17/10000$&$-16/10000$&$-,+$&$-18/1000$&$-17/1000$&$+,-$\\
+&&&$-12/10000$&$-11/10000$&$-,+$\\
+\bottomrule
+\end{tabular}
+\end{center}
+This completes the proof of Theorem~\ref{thm:main}.
+
+\section{Verification, limits, and publication gate}
+The accompanying standard-library Python program \texttt{verify\_prism\_counterexample.py} recalculates the lattice counts from the literal coefficient product and from inclusion--exclusion over actual coordinate subsets. It checks their equality, computes the complete $h^*$-vectors, checks the half-line separation by the positive coefficients of $Q(-850-y)$, and verifies all $19$ rational root intervals. Its JSON output records all intermediate integers.
+
+The independent program \texttt{independent\_check.py} uses a sliding-window bounded-composition count and the grouped formulas \eqref{eq:IEP}--\eqref{eq:IEQ}; it verifies the simpler inequality from Lemma~\ref{lem:separation}. Neither program requires a computer algebra system, root-finding library, network connection, or a large search.
+
+\textbf{Scope.} The real-rootedness assertion for all prism slices remains untouched. The same holds for real-rootedness and unimodality of all hypersimplices. No smallest-dimension or smallest-capacity claim is made. The argument is a counterexample to the exact split requested in the original conjecture, with both inputs nondegenerate.
+
+\textbf{Literature audit.} The v1 statement (p.~19), v2 statement (p.~20), and journal statement (p.~1034) were read and compared. Searches through 2 November 2026 using the exact title, authors, conjecture number, interlacing, and counterexample did not locate a prior resolution of this particular assertion. This is not a certification of priority. Fu's September 2026 preprint \cite{Fu} concerns the different all-matroid real-rootedness conjecture; Ferroni's October 2026 revision \cite{FSh} uses Cayley sums of prisms for different unimodality and log-concavity conjectures. Neither paper's retrieved text addresses the split above.
+
+Fu cites Adiprasito--Zhang's 2026 HAL preprint \emph{Eventual unimodality of the hypersimplex} for rank-three real-rootedness and eventual real-rootedness for each fixed rank. The HAL full text was inaccessible during this audit, so those results were not independently checked here. They are not premises of this counterexample.
+
+\textbf{Stop conditions.} Reclassify the result as a rediscovery if prior literature proves the same failure. Withdraw the claim if a source version excludes the witness, if an independent exact count disagrees, or if the root-separation certificate fails. All checked source versions admit the witness, and the mathematical gates above pass. Do not replace the failed universal split assertion by an ad hoc weaker condition and present that as its solution.
+
+\newpage
+\begin{samepage}
+\textbf{Conditional README wording.} Only after correctness review and a satisfactory duplicate-result check: ``Gave an exact counterexample to Ferroni--McGinnis (2022), Conjecture 5.12's coordinate-splitting interlacing assertion: at $k=6$, splitting $(1^{10},2)$ to $(1^{12})$ yields two real-rooted Ehrhart $h^*$-polynomials whose roots do not interlace.''
+\end{samepage}
+
+\begin{thebibliography}{9}
+\bibitem{FM1} L.~Ferroni and D.~McGinnis,
+\emph{Lattice points in slices of prisms}, arXiv:2202.11808v1, 23 February 2022. Conjecture 5.12, p.~19.
+\url{https://arxiv.org/pdf/2202.11808v1}.
+\bibitem{FM2} L.~Ferroni and D.~McGinnis,
+same title, arXiv:2202.11808v2, 23 May 2023. Conjecture 5.12, p.~20.
+\url{https://arxiv.org/pdf/2202.11808v2}.
+\bibitem{FMJ} L.~Ferroni and D.~McGinnis,
+same title, \emph{Canadian Journal of Mathematics} \textbf{77}(3) (2025), 1013--1040. Online 8 March 2024. Conjecture 5.12, p.~1034.
+\url{https://doi.org/10.4153/S0008414X24000233}.
+\bibitem{Fu} H.~Fu, \emph{Real-rootedness and ultra log-concavity of rank-two matroid Ehrhart $h^*$-polynomials}, arXiv:2609.37439v1, 29 September 2026. Scope and related-work check only.
+\url{https://arxiv.org/abs/2609.37439}.
+\bibitem{FSh} L.~Ferroni, \emph{Unimodality shenanigans in Ehrhart theory}, arXiv:2609.10513v2, 29 October 2026. Scope and related-work check only.
+\url{https://arxiv.org/abs/2609.10513}.
+\end{thebibliography}
+\end{document}

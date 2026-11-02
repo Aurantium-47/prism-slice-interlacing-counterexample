@@ -1,0 +1,5 @@
+PASS: code/verify_prism_counterexample.py
+PASS: code/independent_check.py
+PASS: code/verify_prism_independent.py --output results/independent_root_certificates.json
+PASS: review/verify.py
+PASS: all four exact verifiers completed; no floating-point proof or external dependency.

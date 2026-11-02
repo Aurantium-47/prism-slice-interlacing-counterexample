@@ -1,0 +1,215 @@
+{
+  "target": "Ferroni--McGinnis, Conjecture 5.12, interlacing clause",
+  "source": "https://arxiv.org/pdf/2202.11808v1 (p.19)",
+  "status": "exact counterexample; priority not assessed by this script",
+  "k": 6,
+  "c": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    2
+  ],
+  "c_prime": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+  ],
+  "dimensions": [
+    10,
+    11
+  ],
+  "Ehrhart_counts_P": [
+    1,
+    672,
+    39183,
+    706364,
+    6653195,
+    41539796,
+    195289689,
+    746005952,
+    2432104685,
+    6997745668,
+    18199110919,
+    43543119764,
+    97136394719,
+    204153326664
+  ],
+  "Ehrhart_counts_Q": [
+    1,
+    924,
+    73789,
+    1703636,
+    19611175,
+    144840476,
+    786588243,
+    3409213016,
+    12434998005,
+    39581170420,
+    112835748609,
+    293661065788,
+    707972099627,
+    1599110538676,
+    3414582082055
+  ],
+  "P_ascending": [
+    1,
+    661,
+    31846,
+    312146,
+    927706,
+    960774,
+    347986,
+    38686,
+    901,
+    1
+  ],
+  "Q_ascending": [
+    1,
+    912,
+    62767,
+    878932,
+    3834832,
+    6169360,
+    3834832,
+    878932,
+    62767,
+    912,
+    1
+  ],
+  "P_minus850": 1625988474636775883423151,
+  "P_real_root_intervals": [
+    {
+      "left": "-1000",
+      "right": "-850",
+      "homogeneous_left_value": -137338973846606114154660999,
+      "homogeneous_right_value": 1625988474636775883423151
+    },
+    {
+      "left": "-50",
+      "right": "-20",
+      "homogeneous_left_value": 8161548598831951,
+      "homogeneous_right_value": -7621904282819
+    },
+    {
+      "left": "-10",
+      "right": "-5",
+      "homogeneous_left_value": -36883308009,
+      "homogeneous_right_value": 304109596
+    },
+    {
+      "left": "-5",
+      "right": "-2",
+      "homogeneous_left_value": 304109596,
+      "homogeneous_right_value": -723137
+    },
+    {
+      "left": "-1",
+      "right": "-1/2",
+      "homogeneous_left_value": -3828,
+      "homogeneous_right_value": 875393
+    },
+    {
+      "left": "-1/2",
+      "right": "-1/5",
+      "homogeneous_left_value": 875393,
+      "homogeneous_right_value": -304429396
+    },
+    {
+      "left": "-1/5",
+      "right": "-1/10",
+      "homogeneous_left_value": -304429396,
+      "homogeneous_right_value": 24720986409
+    },
+    {
+      "left": "-1/20",
+      "right": "-1/50",
+      "homogeneous_left_value": 7193639791619,
+      "homogeneous_right_value": -3580834560919951
+    },
+    {
+      "left": "-1/500",
+      "right": "-1/1000",
+      "homogeneous_left_value": -384957725442386421049501,
+      "homogeneous_right_value": 370534780745573947314900999
+    }
+  ],
+  "Q_real_root_intervals": [
+    {
+      "left": "-850",
+      "right": "-100",
+      "homogeneous_left_value": 2462840223865789630433882301,
+      "homogeneous_right_value": -268449678995104421199
+    },
+    {
+      "left": "-100",
+      "right": "-50",
+      "homogeneous_left_value": -268449678995104421199,
+      "homogeneous_right_value": 139591745490371901
+    },
+    {
+      "left": "-20",
+      "right": "-10",
+      "homogeneous_left_value": 251392102752561,
+      "homogeneous_right_value": -159248344419
+    },
+    {
+      "left": "-5",
+      "right": "-2",
+      "homogeneous_left_value": -2991219384,
+      "homogeneous_right_value": 5683965
+    },
+    {
+      "left": "-2",
+      "right": "-1",
+      "homogeneous_left_value": 5683965,
+      "homogeneous_right_value": -133848
+    },
+    {
+      "left": "-1",
+      "right": "-1/2",
+      "homogeneous_left_value": -133848,
+      "homogeneous_right_value": 5683965
+    },
+    {
+      "left": "-1/2",
+      "right": "-1/5",
+      "homogeneous_left_value": 5683965,
+      "homogeneous_right_value": -2991219384
+    },
+    {
+      "left": "-1/10",
+      "right": "-1/20",
+      "homogeneous_left_value": -159248344419,
+      "homogeneous_right_value": 251392102752561
+    },
+    {
+      "left": "-1/50",
+      "right": "-1/100",
+      "homogeneous_left_value": 139591745490371901,
+      "homogeneous_right_value": -268449678995104421199
+    },
+    {
+      "left": "-1/500",
+      "right": "-1/1000",
+      "homogeneous_left_value": -566310835802932850808705999,
+      "homogeneous_right_value": 149891896666473953130766088001
+    }
+  ],
+  "conclusion": "Both polynomials have simple negative real roots, but their roots do not interlace."
+}

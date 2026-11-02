@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-02",
+  "original_files": [
+    {
+      "file": "code/independent_check.py",
+      "sha256": "66f965919790121f443eaf323ae3a8848f3c9cbd58f73b640508d57bf6f131fb"
+    },
+    {
+      "file": "code/verify_prism_counterexample.py",
+      "sha256": "9445217041f37f51e8a6d1d1e1fb553e70c492cee5d7eecc0c265dc8b2022ef8"
+    },
+    {
+      "file": "code/verify_prism_independent.py",
+      "sha256": "31b272b8740cce75a6f0295923ab804338d02302a21fbd8569b69f5736fb13bd"
+    },
+    {
+      "file": "prism_interlacing_counterexample.pdf",
+      "sha256": "d74c608ab2fdaf4856d2e66a7c9e1377ebe2cc06af487f145435cb2131e0a493"
+    },
+    {
+      "file": "prism_interlacing_counterexample.tex",
+      "sha256": "feb89c6c208d47e4ce4dc43d3e23157335d785120328740f037b075d2ae65ee8"
+    }
+  ],
+  "release_changes": [
+    "Focused package: unrelated exploration and source-paper PDFs omitted.",
+    "Audit narratives sanitized to remove internal paths and operational context.",
+    "Original generated proof PDF and TeX preserved byte-for-byte.",
+    "No claim of human peer review, formal verification, or priority."
+  ],
+  "artwork": {
+    "source": "Independent exact certificate and locally generated certificate-driven Matplotlib figure",
+    "renderer": "assets/render.py",
+    "adaptation": "Certificate input changed to release-relative review/certificate.json",
+    "original_svg_sha256": "db288614e8c66292501339104857adf361e7aeb1d834db1a286f9abdcf9c00c0"
+  }
+}
